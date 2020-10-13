@@ -13,9 +13,16 @@ const img_alt = "randomImages"
 
 const refference = "https://www.google.com";
 
+const styleObjectsH1 = {
+  color: 'blueviolet',
+  textAlign: 'center',
+  textTransform: 'capitalize',
+  marginTop: '20px',
+  padding: '5px'
+}
 
 const elements = <Fragment>
-  <h1 className="heading">Hello, My name is {name}</h1>
+  <h1 style={styleObjectsH1}>Hello, My name is {name}</h1>
   <h3>Date is: {currentDate}</h3>
   <h4>Time is: {currentTime} </h4>
   <div className="img_div">
