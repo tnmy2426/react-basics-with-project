@@ -15,12 +15,14 @@ const refference = "https://www.google.com";
 
 
 const elements = <Fragment>
-  <h1>Hello, My name is {name}</h1>
+  <h1 className="heading">Hello, My name is {name}</h1>
   <h3>Date is: {currentDate}</h3>
   <h4>Time is: {currentTime} </h4>
-  <img src={img1} alt={img_alt} />
-  <a href={refference}><img src={img2} alt={img_alt} /></a>
-  <img src={img3} alt={img_alt} />
+  <div className="img_div">
+    <img src={img1} alt={img_alt} />
+    <a href={refference}><img src={img2} alt={img_alt} /></a>
+    <img src={img3} alt={img_alt} />
+  </div>
 </Fragment>
 
 ReactDOM.render(
