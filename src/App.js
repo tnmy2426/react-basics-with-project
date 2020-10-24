@@ -1,15 +1,17 @@
-import React from 'react'
-import { sum, sub, mul, divi } from './Calc';
+import React, { useState } from 'react'
+// import { sum, sub, mul, divi } from './Calc';
 
 const App = () => {
+
+    const [count, setCount] = useState(0)
+    const increament = () =>{
+        setCount(count+1)
+    }
+    
     return (
-        <div>
-            <ul>
-                <li>Sum is: {sum(10, 5)}</li>
-                <li>Sub is: {sub(10, 5)}</li>
-                <li>Mul is: {mul(10, 5)}</li>
-                <li>Divide is: {divi(10, 5)}</li>
-            </ul>
+        <div className='container'>
+            <h1>{count}</h1>
+            <button onClick={increament}>Counter</button>
         </div>
     )
 }
