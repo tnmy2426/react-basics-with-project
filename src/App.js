@@ -4,31 +4,48 @@ import './App.css'
 
 const App = () => {
 
-    const [inputDataFirstName, setInputDataFirstName] = useState('')
-    const inputHandlerOne = (event) => {
-        setInputDataFirstName(event.target.value)
+    const [inputData, setInputData] = useState({
+        firstName: "",
+        lastName: "",
+        email:"",
+        phone:"",
+        address:""
+    })
+    
+    const inputHandler = (event) => {
+        // console.log(event.target.name)
+        const {name, value} = event.target;
+        setInputData((preValue)=>{
+            return{
+                ...preValue,
+                [name]:value
+            }
+        })
     }
 
-    const [inputDataLastName, setInputDataLastName] = useState('')
-    const inputHandlerTwo = (event)=>{
-        setInputDataLastName(event.target.value)
-    }
-
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
     const btnHandler = (event) => {
         event.preventDefault();
-        setFirstName(inputDataFirstName);
-        setLastName(inputDataLastName);
     }
-
+    
     return (
         <div className='container'>
             <form onSubmit={btnHandler}>
                 <div>
-                    <h1>Hello {firstName} {lastName}</h1>
-                    <input type='text' placeholder='Enter Your First Name' onChange={inputHandlerOne} value={inputDataFirstName} />
-                    <input type='text' placeholder='Enter Your Last Name' onChange={inputHandlerTwo} value={inputDataLastName} />
+                    <marquee>Demo Form</marquee>
+                    <h1>Hello {inputData.firstName} {inputData.lastName} </h1>
+                    <h3>{inputData.email}</h3>
+                    <p><i>{inputData.phone}</i></p>
+                    
+                    <input type='text' placeholder='Enter Your First Name' onChange={inputHandler} name='firstName' value={inputData.firstName} />
+                    
+                    <input type='text' placeholder='Enter Your Last Name' onChange={inputHandler} name='lastName' value={inputData.lastName} />
+                    
+                    <input type='email' placeholder='Enter Your Email' onChange={inputHandler} name='email' value={inputData.email} />
+                    
+                    <input type='number' placeholder='Enter Your Mobile Number' onChange={inputHandler} name='phone' value={inputData.phone} />
+
+                    <input type='text' placeholder='Enter Your Address' onChange={inputHandler} name='address' value={inputData.address} />
+                    
                     <button type='submit'>Submit 👍 </button>
                 </div>
             </form>

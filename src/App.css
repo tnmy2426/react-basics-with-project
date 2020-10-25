@@ -23,12 +23,32 @@ form{
     align-items: center; */
 }
 
+marquee{
+    background: transparent;
+    padding: 20px 20px;
+    font-size: 2rem;
+    color: white;
+}
+
 h1{
     color: white;
     background: transparent;
     text-transform: capitalize;
     font-size: 4rem;
     text-shadow: 0 2px 2px black;
+}
+
+h3{
+    padding: 10px 10px;
+    margin: 10px 0;
+    background: transparent;
+    color: white;
+}
+
+p,i{
+    padding: 10px 10px;
+    background: transparent;
+    color: white;
 }
 
 input{
